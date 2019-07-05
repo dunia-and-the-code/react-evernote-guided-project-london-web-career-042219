@@ -2,7 +2,7 @@ import React from 'react';
 
 const NoteList = (props) => (
   <li>
-    <h2>Title</h2>
+    <h2>{props.note.title}</h2>
     <p>Caption...</p>
   </li>
 );

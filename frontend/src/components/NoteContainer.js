@@ -5,11 +5,14 @@ import Content from './Content';
 
 class NoteContainer extends Component {
   render() {
+
+    const {notes} = this.props
+
     return (
       <Fragment>
         <Search />
         <div className='container'>
-          <Sidebar />
+          <Sidebar notes={notes} />
           <Content />
         </div>
       </Fragment>
