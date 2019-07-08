@@ -1,10 +1,13 @@
 import React from 'react';
 
-const NoteList = (props) => (
-  <li>
+const NoteItem = (props) => (
+  <li onClick={props.handleClick}>
     <h2>{props.note.title}</h2>
-    <p>Caption...</p>
+    <p>{
+        props.note.body.split(' ').slice(0, 6).join(' ')
+       }...
+    </p>
   </li>
 );
 
-export default NoteList;
+export default NoteItem;

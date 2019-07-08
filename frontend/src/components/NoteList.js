@@ -8,7 +8,7 @@ const NoteList = (props) => {
   return (
     <ul>
       {
-        props.notes.map(note => <NoteItem key={note.id} note={note} />)
+        props.notes.map(note => <NoteItem key={note.id} note={note} handleClick={() => props.selectNote(note)} />)
       }
     </ul>
   );
