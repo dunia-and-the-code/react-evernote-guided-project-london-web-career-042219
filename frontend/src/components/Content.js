@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import NoteEditor from './NoteEditor';
 import NoteViewer from './NoteViewer';
 import Instructions from './Instructions';
+import NoteCreator from './NoteCreator'
 
 /*
   Advice: If you cannot figure out how to get this component to work,
@@ -12,17 +13,12 @@ import Instructions from './Instructions';
 */
 class Content extends Component {
   renderContent = (props) => {
-    // if (false) {
-    //   return <NoteEditor />;
-    // } else if (false) {
-    //   return <NoteViewer note={this.props.selectedNote}/>;
-    // } else {
-    //   return <p>Select a Note</p>;
-    // }
-    if (this.props.editBtn === true) {
-      return <NoteEditor note={this.props.note} handleClick={this.props.saveEditNote} cancelHandleClick={this.props.cancelEdit} />  
+    if (this.props.editForm === true) {
+      return <NoteEditor note={this.props.note} handleClick={this.props.saveEditNote} cancelHandleClick={this.props.cancelEdit} /> 
+    } else if (this.props.createForm === true) {
+      return <NoteCreator note={this.props.note} handleClick={this.props.saveCreateNote} cancelHandleClick={this.props.cancelEdit} /> 
     } else if (this.props.note != null) {
-      return <NoteViewer note={this.props.note} handleClick={() => this.props.editNote()} />
+      return <NoteViewer note={this.props.note} deleteNote={this.props.deleteNote} handleClick={() => this.props.editNote()} />
     } else {
       return <p>Select a Note</p>;
     }

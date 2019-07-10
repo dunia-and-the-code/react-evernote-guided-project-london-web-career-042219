@@ -7,6 +7,11 @@ const NoteItem = (props) => (
         props.note.body.split(' ').slice(0, 6).join(' ')
        }...
     </p>
+    <p>
+      {
+      props.note.updated_at
+      }
+    </p>
   </li>
 );
 
